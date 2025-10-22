@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:WebAPI.Controllers.AtletaController.Get">
+            <summary>
+            Listar todos los Atletas
+            </summary>       
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AtletaController.Get(System.Int32)">
+            <summary>
+            Listar Atletas dado un Id de disciplina
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DisciplinaController.Get">
+            <summary>
+            Listar todas las Disciplinas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DisciplinaController.GetById(System.Int32)">
+            <summary>
+            Obtiene una Disciplina dado un ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DisciplinaController.Post(Compartido.DTOs.Disciplinas.DTODisciplina)">
+            <summary>
+            Permite dar de alta una Disciplina
+            </summary>
+            <param name="dTODisciplina"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DisciplinaController.Put(System.Int32,Compartido.DTOs.Disciplinas.DTODisciplina)">
+            <summary>
+            Permite modificar una Disciplina
+            </summary>
+            <param name="id"></param>
+            <param name="dTODisciplina"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DisciplinaController.Delete(System.Int32,System.String)">
+            <summary>
+            Permite Eliminar una Disciplina
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.DisciplinaController.GetByName(System.String)">
+            <summary>
+            Obtiene una Disciplina dado un Nombre
+            </summary>
+            <param name="nombre"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.EventoController.Get">
+            <summary>
+            Listar Eventos
+            </summary>       
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.EventoController.GetByIdDisciplina(System.Int32)">
+            <summary>
+            Listar Eventos dado un Id de Disciplina
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.EventoController.GetByTexto(System.String)">
+            <summary>
+            Listar Eventos dado un texto
+            </summary>
+            <param name="texto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.EventoController.GetByFechas(System.String,System.String)">
+            <summary>
+            Listar Eventos dada dos fechas
+            </summary>
+            <param name="fechaInicio,fechaFin,fechaFin "></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.EventoController.GetByPuntaje(System.Decimal,System.Decimal)">
+            <summary>
+            Listar Eventos dado dos puntajes
+            </summary>
+            <param name="puntaje1,puntaje2,puntaje2 "></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.UsuarioController.IniciarSesion(System.String,System.String)">
+            <summary>
+            Iniciar Sesion
+            </summary>
+            <param ></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
