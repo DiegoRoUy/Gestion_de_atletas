@@ -1,0 +1,41 @@
+﻿@model LibreriaWeb.Models.Eventos.EventoPorDisciplinaIdViewModel
+
+@{
+    ViewData["Title"] = "GetEventosXDisciplinaId";
+}
+
+<h1>Buscar eventos por disciplinaId</h1>
+
+@* <h4>Eventos Por Disciplina</h4> *@
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="GetEventosXDisciplinaId">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DisciplinaId" class="control-label"></label>
+                <input asp-for="DisciplinaId" class="form-control" />
+                <span asp-validation-for="DisciplinaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Buscar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-warning">
+        @ViewBag.Mensaje
+    </div>
+}
+@* <div>
+    <a asp-action="Index">Back to List</a>
+</div> *@
+@* <div>
+    <a asp-action="Index">Volver al inicio</a>
+</div> *@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

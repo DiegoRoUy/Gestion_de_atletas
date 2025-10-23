@@ -1,0 +1,65 @@
+﻿@model LibreriaWeb.Models.Atletas.AtletaListadoViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>AtletaListadoViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" readonly />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AtletaNombre" class="control-label"></label>
+                <input asp-for="AtletaNombre" class="form-control" readonly />
+                <span asp-validation-for="AtletaNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AtletaApellido" class="control-label"></label>
+                <input asp-for="AtletaApellido" class="form-control" readonly />
+                <span asp-validation-for="AtletaApellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sexo" class="control-label"></label>
+                <input asp-for="Sexo" class="form-control" readonly />
+                <span asp-validation-for="Sexo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombrePais" class="control-label"></label>
+                <input asp-for="NombrePais" class="form-control" readonly />
+                <span asp-validation-for="NombrePais" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DisciplinaId" class="control-label"></label>
+                <select name="DisciplinaId">
+                    @foreach (var disciplina in Model.Disciplina)
+                    {
+                        <option value="@disciplina.Id">@disciplina.Nombre</option>
+                    }
+                </select>
+                <span asp-validation-for="DisciplinaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Agregar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

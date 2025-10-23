@@ -1,0 +1,72 @@
+﻿@model IEnumerable<LibreriaWeb.Models.Atletas.AtletaListadoViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista Atletas</h1>
+
+<p>
+    <a asp-action="ListaAteltasXDisciplina" style="text-decoration: none">Buscar Atleta por Id de Disciplina</a>
+</p>
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AtletaNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AtletaApellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombrePais)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisciplinaAtletas)
+            </th>
+        
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AtletaNombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AtletaApellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombrePais)
+                </td>
+                <td>
+                    @foreach (var disciplina in item.DisciplinaAtletas)
+                    {
+                        <div>
+                            @Html.DisplayFor(modelDisciplina => disciplina)
+
+                        </div>
+                    }
+
+                </td>
+                      
+               @*  <td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td> *@
+            </tr>
+        }
+    </tbody>
+</table>

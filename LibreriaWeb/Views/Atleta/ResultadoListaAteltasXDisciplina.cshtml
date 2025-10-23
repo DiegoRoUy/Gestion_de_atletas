@@ -1,0 +1,70 @@
+﻿@model IEnumerable<LibreriaWeb.Models.Atletas.AtletaListadoViewModel>
+
+@{
+    ViewData["Title"] = "ResultadoListaAteltasXDisciplina";
+}
+
+<h1>Lista de Atletas</h1>
+
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-warning">
+        @ViewBag.Mensaje
+    </div>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AtletaNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AtletaApellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombrePais)
+            </th>
+           @*  <th>
+                @Html.DisplayNameFor(model => model.Disciplina)
+            </th> *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.AtletaNombre)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.AtletaApellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombrePais)
+            </td>
+          @*   <td>
+                @Html.DisplayFor(modelItem => item.DisciplinaId)
+            </td> *@
+          @*   <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td> *@
+        </tr>
+            
+}
+    </tbody>
+   
+    <div>
+        <a asp-action="ListaAteltasXDisciplina">Volver</a>
+    </div>
+</table>
