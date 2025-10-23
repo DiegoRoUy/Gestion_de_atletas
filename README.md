@@ -1,1 +1,1 @@
-# Obligatorio1 FerreiraRodriguez
+Proyecto Gestion de atletas
